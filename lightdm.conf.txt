@@ -1,0 +1,3 @@
+[Seat:*]
+autologin-user=master or tracer     
+autologin-user-timeout=0

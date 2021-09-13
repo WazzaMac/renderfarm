@@ -1,0 +1,17 @@
+//192.168.0.200/prod_render  /home/tracer/prod_render 
+cifs  username=<admin>, password=<password>,
+vers=3.0,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0
+
+
+//192.168.0.200/test_render  /home/tracer/test_render 
+cifs  username=<admin>,password=<password>,
+vers=3.0,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0
+
+
+//192.168.0.200/prod_render_images  /home/tracer/prod_render/prod_images 
+cifs  username=<admin>,password=<password>,
+vers=3.0,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0
+
+//192.168.0.200/test_render_images  /home/tracer/test_render/test_images 
+cifs  username=<admin>,password=<password>,
+vers=3.0,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0
