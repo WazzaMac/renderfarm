@@ -1,0 +1,110 @@
+[global]
+server string = master-1 host
+server role = standalone server
+wins support = yes
+name resolve order = host wins bcast 
+workgroup = RENDERFARM
+security = user
+map to guest = Bad User
+usershare allow guests = yes 
+hosts allow = 192.168.0.0/16
+hosts deny = 0.0.0.0/0 
+
+#Share for all render hosts to read production animation file
+[prod_render]
+path =  /home/master/prod/prod_render                          
+force user = smbuser                                     
+force group = smbgroup                                
+create mask = 0664                                     
+force create mode = 0664                            
+directory mask = 0775                                 
+force directory mode = 0775                         
+public = yes				          
+writable = yes              
+
+#Share for all render hosts to read test animation file
+[test_render]
+path =  /home/master/test/test_render                          
+force user = smbuser                                     
+force group = smbgroup                                
+create mask = 0664                                     
+force create mode = 0664                            
+directory mask = 0775                                 
+force directory mode = 0775                         
+public = yes				          
+writable = yes              
+
+# Share for all render hosts to write production rendered images
+[prod_render_images]
+path = /home/master/prod/prod_render/prod_images
+force user = smbuser
+force group = smbgroup
+create mask = 0664
+force create mode = 0664
+directory mask = 0775
+force directory mode = 0775
+public = yes
+writeable = yes
+#read only = No
+#guest ok = Yes
+#write list = render-1 render-2 render-3 render-4 render-5
+
+# Share for all render hosts to write test rendered images
+[test_render_images]
+path = /home/master/test/test_render/test_images
+force user = smbuser
+force group = smbgroup
+create mask = 0664
+force create mode = 0664
+directory mask = 0775
+force directory mode = 0775
+public = yes
+writeable = yes
+
+# Share for compositing process to write production video
+[prod_video]
+path = /home/master/prod/prod_video
+force user = smbuser
+force group = smbgroup
+create mask = 0664
+force create mode = 0664
+directory mask = 0775
+force directory mode = 0775
+public = yes
+writeable = yes
+ 
+# Share for compositing process to write test video 
+[test_video]
+path = /home/master/test/test_video
+force user = smbuser
+force group = smbgroup
+create mask = 0664
+force create mode = 0664
+directory mask = 0775
+force directory mode = 0775
+public = yes
+writeable = yes
+
+# Share for staging inputs 
+[drop_box]
+path = /home/master/drop_box
+force user = smbuser
+force group = smbgroup
+create mask = 0664
+force create mode = 0664
+directory mask = 0775
+force directory mode = 0775
+public = yes
+writeable = yes
+
+# Share for staging outputs 
+[pickup_box]
+path = /home/master/pickup_box
+force user = smbuser
+force group = smbgroup
+create mask = 0664
+force create mode = 0664
+directory mask = 0775
+force directory mode = 0775
+public = yes
+writeable = yes
